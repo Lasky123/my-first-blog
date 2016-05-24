@@ -3,20 +3,12 @@
          <title>Ejemplo</title>
     </head>
     <body>
+        {% for post in posts %}
         <div>
-                <h1><a href="">Pagina con DJANGO</a></h1>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaks }}</p>
         </div>
-
-        <div>
-            <p>publicado: 14.05.2016, 12:14</p>
-            <h2><a href="">Primer Post</a></h2>
-            <p>Ejemplo de Django uso de vistas en web</p>
-        </div>
-
-        <div>
-            <p>publicado: 14.05.2016, 12:14</p>
-            <h2><a href="">Segundo post</a></h2>
-            <p>Esta es una pagina creada usando Django, haciendo uso de las vistas.</p>
-        </div>
+    {% endfor %}
     </body>
 </html>
